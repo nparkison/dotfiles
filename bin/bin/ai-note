@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+dir="${AI_NOTES_DIR:-$HOME/work/ai-notes}"
+mkdir -p "$dir"
+file="$dir/$(date +%Y-%m-%d_%H-%M-%S).md"
+{
+  echo "---"
+  echo "when: $(date -Iseconds)"
+  echo "context: ${PWD}"
+  echo "---"
+  echo
+  if [ -t 0 ]; then
+    echo "Notes:"; echo
+  else
+    cat -
+  fi
+} > "$file"
+echo "📝 Saved: $file"

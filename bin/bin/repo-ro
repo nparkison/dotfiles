@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Usage: repo-ro on|off [repo_dir]
+set -euo pipefail
+mode="${1:-}"; dir="${2:-.}"
+[[ -z "$mode" || ! -d "$dir/.git" ]] && { echo "Usage: repo-ro on|off [repo_dir]" >&2; exit 1; }
+cd "$dir"
+if [[ "$mode" == "on" ]]; then
+  find . -type f -not -path "./.git/*" -exec chmod a-w {} +
+  echo "🔒 read-only"
+elif [[ "$mode" == "off" ]]; then
+  find . -type f -not -path "./.git/*" -exec chmod u+w {} +
+  echo "🔓 writable"
+else
+  echo "Expected 'on' or 'off'." >&2; exit 1
+fi

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+name="${1:-my-app}"
+mkdir -p "$name" && cd "$name"
+pnpm init -y
+git init
+echo "# $name" > README.md
+echo "node_modules/" > .gitignore
+git add . && git commit -m "chore: init" >/dev/null 2>&1 || true
+echo "✅ Node project ready: $name"

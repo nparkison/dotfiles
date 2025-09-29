@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+name="${1:-py-app}"
+mkdir -p "$name" && cd "$name"
+uv venv .venv
+source .venv/bin/activate
+uv pip install --upgrade pip
+echo "# $name" > README.md
+printf ".venv/\n__pycache__/\n*.pyc\n" > .gitignore
+git init
+git add . && git commit -m "chore: init" >/dev/null 2>&1 || true
+echo "✅ Python venv ready: $name"
