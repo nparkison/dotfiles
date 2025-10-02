@@ -34,3 +34,5 @@ oh-my-posh init pwsh --config `"$Dotfiles`" | Invoke-Expression
 Install and set 3270 Nerd Font (or your chosen Nerd Font) in Windows Terminal → WSL profile. (Do this in all profiles if PS does not updated automatically)
 
 
+## Claude Desktop
+- Backup of Claude Desktop MCP config file
