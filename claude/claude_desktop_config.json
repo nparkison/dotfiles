@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--output-dir",
+        "C:\\Users\\npark\\OneDrive\\Documents\\playwright\\screenshots",
+        "--extension"
+      ]
+    },
+    "shortcut": {
+      "command": "npx",
+      "args": ["-y", "@shortcut/mcp@latest"],
+      "env": {
+        "SHORTCUT_API_TOKEN": "3b51b7b7-1539-448c-9796-8d87707d4948",
+        "SHORTCUT_TOOLS": "stories-get-by-id,stories-search,stories-get-branch-name"
+      }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
