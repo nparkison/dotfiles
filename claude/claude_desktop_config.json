@@ -13,7 +13,7 @@
       "command": "npx",
       "args": ["-y", "@shortcut/mcp@latest"],
       "env": {
-        "SHORTCUT_API_TOKEN": "3b51b7b7-1539-448c-9796-8d87707d4948",
+        "SHORTCUT_API_TOKEN": "YOUR_API_TOKEN",
         "SHORTCUT_TOOLS": "stories-get-by-id,stories-search,stories-get-branch-name"
       }
     },
